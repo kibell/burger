@@ -2,7 +2,7 @@ const express = require("express");
 
 const router = express.Router();
 
-// Import the model (cat.js) to use its database functions.
+// Import the model (burger.js) to use its database functions.
 const burger = require("../models/burger.js");
 
 
@@ -21,21 +21,21 @@ res.render("index", hbsObject)
 })
 
 
-router.post("/api/cats", function(req, res) {
-    cat.create(["name", "sleepy"], [req.body.name, req.body.sleepy], function(result) {
+router.post("/api/burgers", function(req, res) {
+    burger.create(["burger_name", "devoured"], [req.body.name, req.body.devoured], function(result) {
       // Send back the ID of the new quote
       res.json({ id: result.insertId });
     });
   });
   
-  router.put("/api/cats/:id", function(req, res) {
+  router.put("/api/burgers/:id", function(req, res) {
     var condition = "id = " + req.params.id;
   
     console.log("condition", condition);
   
-    cat.update(
+    burger.update(
       {
-        sleepy: req.body.sleepy
+        devour: req.body.devour
       },
       condition,
       function(result) {
