@@ -1,5 +1,5 @@
 const express = require("express");
-
+const path = require("path")
 const router = express.Router();
 
 // Import the model (burger.js) to use its database functions.
@@ -16,7 +16,7 @@ console.log(hbsObject)
 res.render("index", hbsObject)
 
 
-res.json(path.join(__dirname, "views/index"))
+
     })
 
 
