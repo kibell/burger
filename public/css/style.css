@@ -30,15 +30,17 @@ background: linear-gradient(to right, salmon,orange);
 
   }
 
-  .card-body{
-    background: skyblue;
+  .card-body, .jumbotron{
+    background: rgba(97, 21, 97, 0.63);
   }
 
   p{
-    font-family: 'Seymour One', sans-serif;
-
+    font-family: 'Bitter', serif;
+    font-size: 25px
   }
 
   .card{
     background:linear-gradient(to right, salmon,orange)
   }
+
+  
