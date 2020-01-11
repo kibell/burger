@@ -15,6 +15,8 @@ let hbsObject = {
 console.log(hbsObject)
 res.render("index", hbsObject)
 
+
+res.json(path.join(__dirname, "views/index"))
     })
 
 
