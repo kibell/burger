@@ -19,6 +19,26 @@ li {
   }
   
   body{
-background-color: aqua;
+background: linear-gradient(to right, salmon,orange);
 
+  }
+
+  h1 {
+
+    text-align: center;
+    font-family: 'Seymour One', sans-serif;
+
+  }
+
+  .card-body{
+    background: skyblue;
+  }
+
+  p{
+    font-family: 'Seymour One', sans-serif;
+
+  }
+
+  .card{
+    background:linear-gradient(to right, salmon,orange)
   }
