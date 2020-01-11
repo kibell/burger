@@ -1,11 +1,13 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
-    $(".change-devour").on("click", function(event) {
-      let id = $(this).data("id");
-      let newDevour = $(this).data("newDevour");
+    
+    $(".delete-burger").on("click", function(event) {
+        event.preventDefault();
+        let id = $(this).data("id");
+      
   
       let newEatState = {
-        devoured: newDevour
+        devoured: 1
       };
   
       // Send the PUT request.
@@ -14,21 +16,26 @@ $(function() {
         data: newEatState
       }).then(
         function() {
-          console.log("changed sleep to", newDevour);
+          console.log("changed devour to", newEatState);
           // Reload the page to get the updated list
           location.reload();
         }
       );
     });
     
+
+
+
+
     $(".create-form").on("submit", function(event) {
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
   
-      let newBurger = {
+      const newBurger = {
         name: $("#burgerName").val().trim(),
-        
+        devoured: 0
       };
+  
   
       // Send the POST request.
       $.ajax("/api/burgers", {
@@ -41,28 +48,27 @@ $(function() {
 
     
     });
-  
+});
+});
 
   
-  $(".delete-burger").on("click", function(event) {
-    let id = $(this).data("id");
+//   $(".delete-burger").on("click", function(event) {
+//     let id = $(this).data("id");
 
-    // Send the DELETE request.
-    $.ajax("/api/burgers/" + id, {
-      type: "DELETE"
-    }).then(
-      function() {
-        console.log("deleted cat", id);
-        // Reload the page to get the updated list
-        location.reload();
-      })
+//     // Send the DELETE request.
+//     $.ajax("/api/burgers/" + id, {
+//       type: "DELETE"
+//     }).then(
+//       function() {
+//         console.log("deleted burger", id);
+//         // Reload the page to get the updated list
+//         location.reload();
+//       })
     
 
-})
 
-    })
-})
-  
+
+    
 
 
   

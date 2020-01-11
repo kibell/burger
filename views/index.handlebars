@@ -15,9 +15,9 @@
    
       {{this.id}}
       {{this.burger_name}}
-      <form action="burgers/update/{{this.id}}?_method=PUT" method"POST">
+      <form action="{{this.id}}?_method=PUT" method"POST">
       <input type="hidden" name="devoured" value="false">
-      <button data-burgerid="{{this.id}}" class="devburger">Devour!</button>
+      <button data-id="{{this.id}}" class="delete-burger">Devour!</button>
 
       </form>
       </p>

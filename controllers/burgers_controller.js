@@ -35,7 +35,7 @@ router.post("/api/burgers", function(req, res) {
   
     burger.update(
       {
-        devour: req.body.devour
+        devoured: req.body.devoured
       },
       condition,
       function(result) {
